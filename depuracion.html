@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Depuracion</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>Depuracion y seguridad en el desarrllo de apps</h1>
+</header>
+<main>
+    <h1>Depuración, Refactorización y Seguridad en Aplicaciones</h1>
+    <img src="Ejemplo de consola y depuración.webp" alt="">
+
+    <h2>Herramientas de Depuración</h2>
+    <p>Las herramientas de depuración incluyen los depuradores integrados en IDEs como Xcode y JetBrains. Permiten inspeccionar variables y ejecutar código paso a paso.</p>
+    <ol>
+        <li>Android Studio Debugger</li>
+        <li>Herramientas de monitoreo como Logcat y Network Inspector</li>
+        <li>Simuladores y emuladores</li>
+    </ol>
+    
+    <h2>Uso de Registros del Sistema para Identificar Defectos</h2>
+    <p>Para identificar defectos utilizando registros del sistema (logs) se sigue un enfoque sistemático que implica recopilación, análisis y correlación de datos.</p>
+    <ol>
+        <li>Acceda a los registros del sistema
+            <p>Localice el archivo o la herramienta de visualización de registros. En Windows, puede usar el "Visor de eventos".</p>
+        </li>
+        <li>Filtrar entradas críticas
+            <p>Busque niveles de gravedad altos como "ERROR", "FATAL" o "WARNING". Puede filtrar la vista para mostrar solo estos eventos.</p>
+        </li>
+        <li>Identificar patrones y anomalías
+            <p>1. Observe picos de errores o degradación del rendimiento a lo largo del tiempo.</p>
+            <p>2. Revise el mensaje de error para entender causa, ubicación y momento. Herramientas de análisis de logs pueden usar PLN.</p>
+        </li>
+        <li>Usar herramientas de monitoreo
+            <p>Software que analiza automáticamente los registros y envía alertas en tiempo real.</p>
+        </li>
+        <li>Registrar los defectos encontrados
+            <p>Documente los defectos en un sistema de seguimiento para priorizar correcciones y asociarlas con futuros problemas similares.</p>
+        </li>
+    </ol>
+    
+    <h2>Proceso de Refactorización de Código</h2>
+    <p>Mejorar la estructura interna del código sin cambiar su comportamiento externo, haciéndolo más legible y eficiente.</p>
+    <ol>
+        <li>Identificar áreas problemáticas
+            <p>Buscar "code smells" como métodos largos, código duplicado, nombres confusos o lógica compleja.</p>
+        </li>
+        <li>Crear pruebas unitarias
+            <p>Verificar el comportamiento actual antes de realizar cambios para detectar errores introducidos.</p>
+        </li>
+        <li>Planificar y refactorizar
+            <p>Realizar cambios incrementales, analizando el impacto de cada modificación.</p>
+        </li>
+        <li>Ejecutar pruebas
+            <p>Tras cada cambio, ejecutar pruebas unitarias para confirmar que la funcionalidad no se rompe.</p>
+        </li>
+        <li>Confirmar cambios y repetir
+            <p>Si todas las pruebas pasan, confirmar los cambios; si fallan, corregir o revertir. Repetir hasta completar la refactorización.</p>
+        </li>
+    </ol>
+    
+    <h2>Mecanismos de Seguridad en Apps</h2>
+    <ul>
+        <li><strong>Permisos</strong>
+            <ul>
+                <li>Autorizaciones que solicita la app para acceder a recursos como cámara, micrófono o ubicación.</li>
+                <li>Limitar acceso a información sensible.</li>
+                <li>Ejemplo: Google Maps solicita permiso de ubicación para dar direcciones.</li>
+            </ul>
+        </li>
+        <li><strong>Archivos de Configuración</strong>
+            <ul>
+                <li>Almacenan parámetros de conexión o claves de API.</li>
+                <li>Deben protegerse con cifrado o variables de entorno.</li>
+                <li>Ejemplo: Archivo `.env` en Node.js con credenciales protegidas.</li>
+            </ul>
+        </li>
+        <li><strong>Cifrado</strong>
+            <ul>
+                <li>Convierte datos sensibles en formato ilegible sin clave.</li>
+                <li>Tipos: simétrico (AES, DES) y asimétrico (RSA, ECC).</li>
+                <li>Ejemplo: WhatsApp usa cifrado de extremo a extremo.</li>
+            </ul>
+        </li>
+        <li><strong>Medios de Autenticación Externos</strong>
+            <ul>
+                <li>Servicios externos para verificar identidad (OAuth, SSO, 2FA).</li>
+                <li>Evitan contraseñas débiles y mejoran seguridad.</li>
+                <li>Ejemplo: Inicio de sesión con Google o Facebook en apps como Spotify.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>Autenticación con Servicios Externos</h2>
+    <p>La aplicación delega la verificación de identidad a proveedores externos como Google, Facebook o Apple.</p>
+    <ul>
+        <li><strong>Qué es</strong>
+            <ul>
+                <li>Método que usa infraestructura de un proveedor externo para validar al usuario.</li>
+                <li>No se gestionan contraseñas directamente en la app.</li>
+            </ul>
+        </li>
+        <li><strong>Cómo funciona</strong>
+            <ul>
+                <li>Usuario selecciona un proveedor externo.</li>
+                <li>Redirigido a iniciar sesión en el proveedor.</li>
+                <li>Proveedor valida identidad y devuelve token seguro a la app.</li>
+            </ul>
+        </li>
+        <li><strong>Protocolos comunes</strong>
+            <ul>
+                <li>OAuth 2.0</li>
+                <li>OpenID Connect (OIDC)</li>
+                <li>SAML</li>
+            </ul>
+        </li>
+        <li><strong>Ventajas</strong>
+            <ul>
+                <li>Evita gestión de contraseñas propias.</li>
+                <li>Mejora la seguridad y la experiencia de usuario.</li>
+            </ul>
+        </li>
+        <li><strong>Desventajas</strong>
+            <ul>
+                <li>Dependencia del proveedor externo.</li>
+                <li>Configuración correcta de tokens y redirecciones necesaria.</li>
+            </ul>
+        </li>
+        <li><strong>Ejemplos</strong>
+            <ul>
+                <li>Inicio sesión con Google en Spotify o YouTube.</li>
+                <li>Inicio sesión con Facebook en juegos o redes sociales.</li>
+                <li>Inicio sesión con Apple en apps iOS.</li>
+                <li>SSO corporativo en Microsoft 365 o Slack.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <button onclick="window.location.href='index.html'">Volver al inicio</button>
+    

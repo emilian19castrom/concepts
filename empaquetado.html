@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Empaquetado</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>Herramientas para empaquetado y despliegue</h1>
+</header>
+<main>
+
+    <h1>Empaquetado, Herramientas y Despliegue de Aplicaciones</h1>
+    <img src="Proceso de empaquetado y despliegue.webp" alt="">
+
+    <p>El empaquetado de aplicaciones consiste en preparar una app para su distribución, instalación o despliegue, agrupando todos los archivos necesarios en un formato específico. Esto incluye compilar, optimizar, generar instaladores o contenedores y firmar los paquetes.</p>
+    
+    <h2>Tipos de Empaquetado</h2>
+    
+    <h3>1. Paquetes de Aplicación Móvil</h3>
+    <p><strong>Android:</strong> APK o AAB. Contienen código, recursos y librerías.  
+    <strong>Ejemplo:</strong> Android Studio genera <em>miapp.apk</em>.</p>
+    <p><strong>iOS:</strong> IPA. Contiene ejecutable, recursos y certificados.  
+    <strong>Ejemplo:</strong> Xcode genera <em>MiApp.ipa</em>.</p>
+    <img src="abb.webp" alt="">
+    
+    <h3>2. Paquetes de Aplicación de Escritorio</h3>
+    <p><strong>Windows:</strong> EXE o MSI/MSIX. Contienen programa, librerías y scripts.  
+    <strong>Ejemplo:</strong> Electron Builder genera <em>MiApp.exe</em>.</p>
+    <p><strong>macOS:</strong> DMG o PKG. Incluyen la app y recursos.  
+    <strong>Ejemplo:</strong> Xcode crea <em>MiApp.dmg</em>.</p>
+    <p><strong>Linux:</strong> DEB o RPM, empaquetando app y dependencias.  
+    <strong>Ejemplo:</strong> Un paquete .deb de Ubuntu.</p>
+    <img src="escri.png" alt="">
+    
+    <h3>3. Paquetes de Aplicación Web</h3>
+    <p>HTML, CSS, JS, imágenes y librerías empaquetadas en bundles optimizados.  
+    <strong>Herramientas:</strong> Webpack, Vite, Rollup.  
+    <strong>Ejemplo:</strong> React genera <em>bundle.js</em> e <em>index.html</em>.</p>
+    <img src="webb.png" alt="">
+
+    <h3>4. Paquetes de Contenedores</h3>
+    <p>Aplicación con dependencias y sistema operativo mínimo en contenedor.  
+    <strong>Formato:</strong> Docker Image.  
+    <strong>Ejemplo:</strong> Node.js empaquetado en Docker para Kubernetes o nube.</p>
+    
+    <h3>5. Paquetes de Librerías o Componentes</h3>
+    <p>Para reutilización en otros proyectos.  
+    <strong>Formatos:</strong> NPM (JS), Maven/JAR (Java), PyPI/Wheel (Python).  
+    <strong>Ejemplo:</strong> Módulo NPM <em>mi-libreria-1.0.0.tgz</em> instalado con <code>npm install</code>.</p>
+    
+    <h2>Herramientas de Empaquetado</h2>
+    <ul>
+      <li><strong>Android Studio / Gradle:</strong> APK/AAB, firma digital y optimización.</li>
+      <li><strong>Xcode:</strong> IPA, firma de código y subida a App Store Connect.</li>
+      <li><strong>Maven / Gradle (Java):</strong> JAR/WAR, gestión de dependencias y compilación.</li>
+      <li><strong>Electron Packager / Builder:</strong> Apps web a escritorio, genera EXE, DMG, AppImage.</li>
+      <li><strong>Webpack / Vite / Rollup:</strong> Optimización de apps web para producción.</li>
+      <li><strong>Docker:</strong> Empaqueta app y dependencias en contenedores.</li>
+      <li><strong>MSIX / MSI (Windows):</strong> Instaladores para distribución empresarial.</li>
+      <img src="abb.webp" alt="">
+    </ul>
+    
+    <h2>Procedimientos de Empaquetado</h2>
+    <ol>
+      <li><strong>Compilación del código:</strong> Transformar el código fuente en ejecutable. Ejemplo: Java, Kotlin, Swift, JavaScript.</li>
+      <li><strong>Gestión de dependencias:</strong> Incluir librerías externas necesarias. Herramientas: NPM, Gradle, Maven, Pip.</li>
+      <li><strong>Optimización del paquete:</strong> Minificación, reducción de recursos, optimización de imágenes.</li>
+      <li><strong>Firma del paquete:</strong> Garantiza autenticidad y seguridad. Obligatoria en APK/AAB y IPA.</li>
+      <li><strong>Generación del instalador o contenedor:</strong> Crear el archivo final. Ejemplos: APK, IPA, EXE, DMG, JAR, Docker Image.</li>
+      <li><strong>Pruebas del paquete:</strong> Validar instalación y funcionamiento, automáticas y manuales.</li>
+      <li><strong>Despliegue:</strong> Publicar la app en tiendas, servidores o repositorios Docker.</li>
+    </ol>
+    
+    <h2>Diferencias entre Herramientas y Procedimientos</h2>
+    <p><strong>Herramientas:</strong> Programas o utilidades que automatizan tareas técnicas, como compilar, gestionar dependencias, generar paquetes o contenedores. Ejemplo: Maven, Gradle, MSIX Packaging Tool.</p>
+    <p><strong>Procedimientos:</strong> Conjunto de pasos lógicos que definen cómo empaquetar correctamente, incluyendo compilación, optimización, firma, pruebas y despliegue.</p>
+    <p>Una herramienta puede ejecutar varios pasos, pero el procedimiento define qué pasos seguir y en qué orden, asegurando consistencia y calidad.</p>
+    
+    <h2>Despliegue de Aplicaciones</h2>
+    <p>Llevar el artefacto final a un entorno donde se ejecute para los usuarios. Se usan herramientas de automatización y servicios en la nube para mayor confiabilidad.</p>
+    
+    <h3>Herramientas de despliegue y automatización</h3>
+    <ul>
+      <li><strong>GitHub Actions:</strong> CI/CD, compila, testea y despliega automáticamente.</li>
+      <li><strong>Jenkins:</strong> Automatización de pipelines de construcción, pruebas y despliegue.</li>
+      <li><strong>CircleCI:</strong> Integración continua y despliegue automático para repositorios colaborativos.</li>
+      <li><strong>Docker + Kubernetes:</strong> Contenedores reproducibles y escalables en producción.</li>
+      <li><strong>Servicios en la nube / PaaS:</strong> Facilitan hosting, escalabilidad y despliegue automático.</li>
+    </ul>
+    
+    <h3>Ejemplos de flujo de despliegue</h3>
+    <p><strong>1. App web Node.js:</strong> GitHub Actions construye Docker Image y despliega automáticamente en la nube.</p>
+    <p><strong>2. Microservicios:</strong> Cada microservicio en contenedor Docker, desplegado con Kubernetes, pipeline automatizado para reconstrucción y escalado.</p>
+    <p><strong>3. Proyecto monolítico Java:</strong> Maven/Gradle genera JAR/WAR, Jenkins prueba, construye binario y despliega en servidor o contenedor Docker.</p>
+    
+    <button onclick="window.location.href='index.html'">Volver al inicio</button>
+    

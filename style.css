@@ -1,0 +1,109 @@
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+background: #f5f5f5;
+}
+
+
+header {
+background: #333;
+color: #fff;
+padding: 20px;
+text-align: center;
+}
+
+
+main {
+padding: 20px;
+}
+
+
+.item {
+background: #fff;
+padding: 15px;
+margin-bottom: 10px;
+border-radius: 8px;
+box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+cursor: pointer;
+transition: 0.3s;
+}
+
+
+.item:hover {
+background: #e6e6e6;
+}
+
+
+
+
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+background: #f5f5f5;
+}
+
+
+header {
+background: #333;
+color: #fff;
+padding: 20px;
+text-align: center;
+}
+
+
+main {
+padding: 20px;
+}
+
+
+.item {
+background: #fff;
+padding: 15px;
+margin-bottom: 10px;
+border-radius: 8px;
+box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+cursor: pointer;
+transition: 0.3s;
+}
+
+
+.item:hover {
+background: #e6e6e6;
+}
+
+
+
+header {
+background: #333;
+color: #fff;
+padding: 20px;
+text-align: center;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+
+#authSection, #mainContent {
+padding: 20px;
+}
+
+
+input {
+display: block;
+margin-bottom: 10px;
+padding: 10px;
+width: 250px;
+}
+
+
+button {
+padding: 10px 15px;
+margin-right: 10px;
+cursor: pointer;
+}
+
+
+ul li {
+margin: 10px 0;
+}

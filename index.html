@@ -1,0 +1,55 @@
+
+<!-- ===================== index.html ===================== -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gestión de Herramientas</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="manifest" href="manifest.json">
+
+</head>
+<body>
+
+
+<header>
+<h1>Gestión de Herramientas</h1>
+<button id="logoutBtn" style="display:none">Cerrar sesión</button>
+</header>
+
+
+<section id="authSection">
+<h2>Iniciar Sesión / Registrarse</h2>
+<input id="email" type="text" placeholder="Correo" />
+<input id="password" type="password" placeholder="Contraseña" />
+<button id="loginBtn">Iniciar Sesión</button>
+<button id="registerBtn">Registrarse</button>
+<p id="authMessage"></p>
+</section>
+
+
+<section id="mainContent" style="display:none">
+<h2>selecciona una seccion para mostrar mas informacion</h2>
+<ul>
+<li><a href="sensores.html">Gestión de Sensores</a></li>
+<li><a href="servicios.html">Servicios y Notificaciones</a></li>
+<li><a href="librerias.html">Librerías y Toolkits</a></li>
+<li><a href="depuracion.html">Depuración y Seguridad</a></li>
+<li><a href="empaquetado.html">Empaquetado y Despliegue</a></li>
+<li><a href="plataformas.html">Plataformas y Distribución</a></li>
+</ul>
+</section>
+
+<script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js")
+        .then(reg => console.log("Service Worker registrado", reg))
+        .catch(err => console.log("Error registrando SW", err));
+    }
+</script>
+    
+<script src="script.js"></script>
+</body>
+</html>
+

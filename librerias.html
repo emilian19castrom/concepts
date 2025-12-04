@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Librerias</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>Librerias y toolkids para desarrollo movil</h1>
+</header>
+
+<main>
+
+    <h2>Librerías y SDK comunes para aplicaciones móviles</h2>
+    <img src="Ejemplos de librerías y toolkits móviles.webp" alt="">
+
+    <p>En el desarrollo de apps móviles se usan librerías especializadas que ayudan a resolver funcionalidades comunes (red, interfaz, base de datos, imágenes, etc.) sin tener que escribir todo desde cero. Muchas de estas librerías están disponibles para plataformas como Android, iOS o frameworks multiplataforma.</p>
+    
+    <h3>Algunas librerías populares</h3>
+    
+    <p><strong>Para iOS / Swift / Objective‑C:</strong></p>
+    <p><strong>Alamofire</strong> — facilita hacer solicitudes HTTP, consume APIs, gestiona peticiones y respuestas de red. Esto simplifica la comunicación con servidores. </p>
+    <p><strong>Kingfisher</strong> — librería para descargar, mostrar y hacer cache de imágenes en apps iOS; muy útil cuando trabajas con galerías, avatares, feeds, etc. </p>
+    <p><strong>RxSwift</strong> — permite usar programación reactiva en iOS, ideal cuando la app necesita reaccionar a cambios de datos o eventos asíncronos (red, interfaz, base de datos). </p>
+    
+    <p><strong>Para Android / Kotlin / Java (y ecosistema Android):</strong></p>
+    <p><strong>Retrofit</strong> — librería muy popular para interactuar con servicios REST / APIs, convertir respuestas JSON a objetos, manejar peticiones HTTP fácilmente. </p>
+    <p><strong>Room (Jetpack)</strong> — facilita persistir datos localmente con base de datos SQLite de forma tipada y segura. </p>
+    <p><strong>Glide / Coil / Picasso</strong> — librerías para cargar, mostrar, minimizar y cachear imágenes de forma eficiente, incluso desde internet. </p>
+    <p><strong>RxJava / Coroutines + Flow / LiveData / ViewModel (Jetpack)</strong> — herramientas/librerías para manejar asincronía, flujo de datos, estados reactivos, ideal para apps con lógica asíncrona. </p>
+    
+    <p><strong>Multiplataforma / Híbrido / SDK generales:</strong></p>
+    <p><strong>Firebase</strong> — ofrece servicios listos como base de datos en tiempo real, autenticación, almacenamiento, analíticas, sincronización de datos; muy útil para acelerar backend en apps móviles.</p>
+    <p><strong>React Native</strong> — aunque es un entorno completo para construir apps móviles, su ecosistema incluye muchas librerías que resuelven UI, navegación, estado, redes, integración nativa, etc</p>
+    <p><strong>NativeScript</strong> — permite crear apps nativas usando JavaScript/TypeScript y usar librerías de terceros, con acceso a APIs nativas. </p>
+    
+    <h3>Para qué sirven (funciones especializadas típicas)</h3>
+    
+    <p>Las librerías suelen resolver tareas repetitivas o complejas, como:</p>
+    <ul>
+      <li>Comunicación con servidores / APIs REST / Web services (HTTP, JSON). Ej: Retrofit, Alamofire.</li>
+      <li>Carga, gestión y cache de imágenes, recursos multimedia. Ej: Glide, Kingfisher, Coil.</li>
+      <li>Persistencia local de datos (bases de datos locales, almacenamiento offline). Ej: Room, SQLite wrappers, Firebase local/offline.</li>
+      <li>Asincronía, programación reactiva, manejo de hilos y eventos. Ej: RxJava, RxSwift, Kotlin Coroutines + Flow.</li>
+      <li>Autenticación, sincronización, backend como servicio, gestión de usuarios, notificaciones. Ej: Firebase.</li>
+      <li>Interfaz de usuario, componentes reutilizables, navegación, diseño adaptable, animaciones. Ej: librerías dentro de React Native, NativeScript, componentes UI nativos o híbridos.</li>
+    </ul>
+    
+    <h3>Ejemplos de uso reales</h3>
+    
+    <p>• Si estás desarrollando una app Android que consume un API REST, puedes usar <strong>Retrofit</strong> para hacer peticiones HTTP, transformar la respuesta JSON en objetos Kotlin/Java fácilmente, y usarlos en tu lógica. </p>
+    
+    <p>• Si necesitas mostrar imágenes de perfil o galería desde URLs remotas, puedes usar <strong>Glide</strong> (Android) o <strong>Kingfisher</strong> (iOS) para descargar, cachear y mostrar imágenes de forma eficiente sin bloquear la interfaz. </p>
+    
+    <p>• Si tu aplicación necesita trabajar offline y guardar datos localmente, puedes usar <strong>Room</strong> en Android o la base de datos de <strong>Firebase</strong> (o su modo offline) para almacenar datos de usuario, configuración o cachés, y sincronizarlos luego. </p>
+    
+    <p>• Si desarrollas con React Native, puedes combinar su ecosistema con librerías de estado, navegación, red, UI, etc., para crear una app multiplataforma con mucho menos esfuerzo que desarrollar por separado para Android y iOS. </p>
+    
+
+
+
+<button onclick="window.location.href='index.html'">Volver al inicio</button>
+</main>
+</body>
+</html>
