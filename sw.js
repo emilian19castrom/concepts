@@ -1,24 +1,25 @@
-const CACHE_NAME = "app-cache-v1";
+const CACHE_NAME = "app-cache-v3";
 
+// Archivos a cachear (TODOS en rutas relativas para GitHub Pages)
 const ARCHIVOS_A_CACHEAR = [
-  "/",
-  "/index.html",
-  "/style.css",
-  "/script.js",
-  "/sensores.html",
-  "/servicios.html",
-  "/librerias.html",
-  "/depuracion.html",
-  "/empaquetado.html",
-  "/plataformas.html",
-  "/biomebaro.png",
-  "/webb.png"
+  "./index.html",
+  "./style.css",
+  "./script.js",
+  "./sensores.html",
+  "./servicios.html",
+  "./librerias.html",
+  "./depuracion.html",
+  "./empaquetado.html",
+  "./plataformas.html",
+  "./biomebaro.png",
+  "./webb.png"
 ];
 
 // INSTALACIÓN DEL SERVICE WORKER
-self.addEventListener("install", e => {
+self.addEventListener("install", event => {
   console.log("Service Worker instalado");
-  e.waitUntil(
+
+  event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
       return cache.addAll(ARCHIVOS_A_CACHEAR);
     })
@@ -26,25 +27,26 @@ self.addEventListener("install", e => {
 });
 
 // ACTIVACIÓN Y LIMPIEZA DE CACHÉS ANTIGUOS
-self.addEventListener("activate", e => {
-  e.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(
+self.addEventListener("activate", event => {
+  event.waitUntil(
+    caches.keys().then(keys => {
+      return Promise.all(
         keys.map(key => {
           if (key !== CACHE_NAME) {
+            console.log("Eliminando caché antiguo:", key);
             return caches.delete(key);
           }
         })
-      )
-    )
+      );
+    })
   );
 });
 
 // INTERCEPTAR PETICIONES Y USAR CACHÉ
-self.addEventListener("fetch", e => {
-  e.respondWith(
-    caches.match(e.request).then(respuestaCache => {
-      return respuestaCache || fetch(e.request);
+self.addEventListener("fetch", event => {
+  event.respondWith(
+    caches.match(event.request).then(cacheResponse => {
+      return cacheResponse || fetch(event.request);
     })
   );
 });
