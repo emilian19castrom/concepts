@@ -1,109 +1,193 @@
-body {
-font-family: Arial, sans-serif;
-margin: 0;
-background: #f5f5f5;
-}
-
-
-header {
-background: #333;
-color: #fff;
-padding: 20px;
-text-align: center;
-}
-
-
-main {
-padding: 20px;
-}
-
-
-.item {
-background: #fff;
-padding: 15px;
-margin-bottom: 10px;
-border-radius: 8px;
-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-cursor: pointer;
-transition: 0.3s;
-}
-
-
-.item:hover {
-background: #e6e6e6;
-}
-
-
-
+/* ------------------------------
+   TIPOGRAFÍA GLOBAL
+------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 body {
-font-family: Arial, sans-serif;
-margin: 0;
-background: #f5f5f5;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
 }
 
-
+/* ------------------------------
+   HEADER MODERNO
+------------------------------ */
 header {
-background: #333;
-color: #fff;
-padding: 20px;
-text-align: center;
+    background: #1e1e2f;
+    color: #fff;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 3px solid #4a4aff;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
 }
 
+header h1 {
+    font-weight: 600;
+    font-size: 1.6rem;
+    margin: 0;
+}
 
+header button {
+    background: #4a4aff;
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+header button:hover {
+    background: #6868ff;
+}
+
+/* ------------------------------
+   CONTENEDOR PRINCIPAL
+------------------------------ */
 main {
-padding: 20px;
+    padding: 25px;
+    max-width: 900px;
+    margin: auto;
 }
 
 
+/* ------------------------------
+   TARJETAS MODERNAS
+------------------------------ */
 .item {
-background: #fff;
-padding: 15px;
-margin-bottom: 10px;
-border-radius: 8px;
-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-cursor: pointer;
-transition: 0.3s;
+    background: white;
+    padding: 18px;
+    margin-bottom: 15px;
+    border-radius: 14px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    transition: 0.25s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-
 
 .item:hover {
-background: #e6e6e6;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.item-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.item-description {
+    font-size: 0.95rem;
+    opacity: 0.7;
+}
+
+/* Icono o flecha al final */
+.item .arrow {
+    font-size: 1.2rem;
+    opacity: 0.7;
 }
 
 
-
-header {
-background: #333;
-color: #fff;
-padding: 20px;
-text-align: center;
-display: flex;
-justify-content: space-between;
-align-items: center;
-}
-
-
-#authSection, #mainContent {
-padding: 20px;
-}
-
-
+/* ------------------------------
+   FORMULARIOS MODERNOS
+------------------------------ */
 input {
-display: block;
-margin-bottom: 10px;
-padding: 10px;
-width: 250px;
+    display: block;
+    margin-bottom: 12px;
+    padding: 12px;
+    width: 100%;
+    max-width: 380px;
+    border: 2px solid #d0d0ff;
+    border-radius: 8px;
+    transition: 0.2s;
+    background: #fafaff;
 }
 
+input:focus {
+    border-color: #4a4aff;
+    outline: none;
+    background: white;
+}
 
 button {
-padding: 10px 15px;
-margin-right: 10px;
-cursor: pointer;
+    padding: 12px 16px;
+    cursor: pointer;
+    border: none;
+    background: #4a4aff;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.2s;
 }
 
+button:hover {
+    background: #6a6aff;
+}
 
-ul li {
-margin: 10px 0;
+#authSection,
+#mainContent {
+    padding: 20px;
+}
+
+/* ------------------------------
+   RESPONSIVE
+------------------------------ */
+
+/* Móviles */
+@media (max-width: 480px) {
+
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+
+    header h1 {
+        font-size: 1.35rem;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    .item {
+        padding: 15px;
+        flex-direction: column;
+        text-align: left;
+        gap: 8px;
+    }
+
+    button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+/* Tablets */
+@media (min-width: 480px) and (max-width: 900px) {
+
+    main {
+        padding: 20px;
+    }
+
+    .item {
+        padding: 16px;
+    }
+
+    input {
+        max-width: 420px;
+    }
+}
+
+/* Escritorio */
+@media (min-width: 900px) {
+    main {
+        width: 70%;
+    }
 }
