@@ -7,37 +7,96 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <div class="item">
-        <h2><span class="icon">⚙️</span>Aplicaciones Nativas, Híbridas y Multiplataforma</h2>
-        <p>
-            El desarrollo de aplicaciones móviles puede realizarse usando herramientas especializadas para un sistema operativo 
-            o tecnologías que permiten compilar para varios a la vez.
-        </p>
+<div class="item">
+    <h2><span class="icon">⚙️</span>Aplicaciones Nativas, Híbridas y Multiplataforma</h2>
+    <p>
+      Las aplicaciones pueden clasificarse en varias categorias segun su funcionalidad y tecnologia que utilizan.cada una posee caracreisticas y usos especificos,cosa que es importante conocer para poder diferenciarlas.  
+    </p>
+    <ul>
+      <li>
+        <strong>Nativas:</strong> Las aplicaciones nativas se desarrollan especificamente para un sistema operativo,como IOS o oAndroid,siendo su pricipal caracteristica que aprovechan al 100 porciento las capacidades del hardware y software del dispositivo.Esto hace que puedan ofrecer un rendimiento optimo y una mejor experiencia al usuario,requieriendo un desarrollo separado para cada plataforma.Regularmente son Hechas en lenguajes oficiales (Kotlin/Swift).  
+       <p><strong>Ventajas:</strong></p>
         <ul>
-            <li><strong>Nativas:</strong>  
-                Se desarrollan directamente para Android o iOS usando sus lenguajes oficiales (Kotlin/Java y Swift/Objective-C).  
-                Ofrecen el mejor rendimiento, acceso completo al hardware, animaciones fluidas y una experiencia de usuario consistente.  
-                Son ideales para videojuegos, apps con sensores, cámaras avanzadas o alto rendimiento.</li>
-
-            <li><strong>Multiplataforma:</strong>  
-                Un solo código se compila para Android, iOS y otros sistemas.  
-                <br>
-                Ejemplos:
-                <ul>
-                    <li>Flutter (Dart): UI altamente personalizable y rendimiento cercano a nativo.</li>
-                    <li>React Native (JS/TS): Usa componentes nativos con JavaScript.</li>
-                    <li>Kotlin Multiplatform: Compartición de lógica sin reemplazar UI nativa.</li>
-                </ul>
-            </li>
-
-            <li><strong>Híbridas:</strong>  
-                Basadas en tecnologías web (HTML, CSS, JS) ejecutadas dentro de un contenedor nativo.
-                <br>Ejemplos: Ionic, Capacitor, Cordova.</li>
-
-            <li>La elección depende de factores como rendimiento, presupuesto, tiempo de desarrollo, mantenimiento y tipo de proyecto.</li>
+          <li>Máximo rendimiento y fluidez (acceso directo a APIs nativas y GPU).</li>
+          <li>Mejor integración con hardware y funciones del dispositivo (GPS, cámara, sensores).</li>
+          <li>Experiencia de usuario consistente y optimizada para la plataforma.</li>
+          <li>Acceso completo a las últimas APIs del sistema operativo y mejor soporte para actualizaciones de UI/UX.</li>
         </ul>
+        <p><strong>Desventajas:</strong></p>
+        <ul>
+          <li>Mayor coste de desarrollo y mantenimiento (código separado por plataforma: Java/Kotlin para Android y Swift/Objective-C para iOS).</li>
+          <li>Tiempo de desarrollo más largo si se soportan varias plataformas.</li>
+          <li>Necesidad de equipos con conocimientos específicos de cada plataforma.</li>
+        </ul>
+        <p class="examples"><strong>Ejemplos:</strong></p>
+        <ul>
+          <li>Instagram (componentes nativos para rendimiento y multimedia).</li>
+          <li>WhatsApp (uso intensivo de APIs nativas y optimizaciones específicas).</li>
+        </ul>
+      </section>
+<!--//////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <strong>Multiplataforma (Flutter, RN, MAUI):</strong> Estas son aplicaciones diseñadas para funcionar en multiples sistemas operativos, tales como Android,iOS,windows o macOS,asi como en distintos dispositivos como tablets,telefonos o computadoras de escritorio.Estas regularmente ahorran costos y tiempo al usar un solo codigo base,permitiendo asi una experiencia de usuario mas consistente.  
+          <p><strong>Ventajas:</strong></p>
+        <ul>
+          <li>Desarrollo más rápido si ya existe una web (HTML/CSS/JS reutilizable dentro de un contenedor como WebView).</li>
+          <li>Costes iniciales más bajos y ciclo de publicación único por código base web.</li>
+          <li>Fácil iteración y despliegue de cambios en la parte web (dependiendo de la arquitectura).</li>
+        </ul>
+        <p><strong>Desventajas:</strong></p>
+        <ul>
+          <li>Rendimiento inferior frente a nativas en operaciones intensivas (animaciones complejas, procesamiento multimedia).</li>
+          <li>Limitaciones en la experiencia de usuario y en el acceso a APIs nativas; a veces se requieren plugins o puentes.</li>
+          <li>Dependencia del contenedor (WebView) que puede comportarse distinto por plataforma y versión.</li>
+        </ul>
+        <p class="examples"><strong>Ejemplos:</strong></p>
+        <ul>
+          <li>Twitter Lite (versión web progresiva dentro de un contenedor en algunos casos).</li>
+          <li>Early versions of Spotify (usaban WebView en algunas partes, aunque hoy muchos servicios han migrado).</li>
+        </ul>
+      </section>
+                                              
+      
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+        <strong>Híbridas:</strong> Estas son apps creadas a partir de tecnologias web (HTML,CSS,JavaScript) y luego "envueltas" en un contenedor nativo,lo que permite que puedan ser usadas en multiples plataformas tales como iOS o Android.Con un solo codigo base,combinan lo mejor de las apps nativas(acceso a funciones del dispositivo) y web(desarrollo multiplataforma bueno,bonito y barato).Sin embargo pueden ser un poco menos rapidas que las puramente nativas.  
+               <h2>Apps Multiplataforma <span class="badge">Un solo código</span></h2>
+        <p><strong>Ventajas:</strong></p>
+        <ul>
+          <li>Un único código base para iOS y Android (mejora la productividad y reduce costes de mantenimiento).</li>
+          <li>Rápida entrega de nuevas funcionalidades y coherencia entre plataformas.</li>
+          <li>Gran ecosistema de librerías y componentes listos para usar (dependiendo del framework: Flutter, React Native, etc.).</li>
+        </ul>
+        <p><strong>Desventajas:</strong></p>
+        <ul>
+          <li>Puede haber diferencias sutiles entre plataformas que requieren código específico o «puentes» nativos.</li>
+          <li>Rendimiento muy bueno en muchos casos, pero ciertas operaciones nativas muy pesadas pueden necesitar módulos nativos.</li>
+          <li>Dependencia del framework y su madurez; cambios importantes en el framework pueden requerir actualizaciones.</li>
+        </ul>
+        <p class="examples"><strong>Ejemplos:</strong></p>
+        <ul>
+          <li>Facebook Ads Manager (originalmente construida con React Native en parte de la app).</li>
+          <li>Google Ads (utiliza tecnologías multiplataforma en ciertas secciones; muchas grandes empresas usan Flutter/React Native según el caso).</li>
+        </ul>
+      </section>
     </div>
 
+    <h2>referencias</h2>
+    <ol>
+      <li><a href="https://www.godaddy.com/resources/es/tecnologia/que-es-una-app-y-para-que-se-utiliza
+">https://www.godaddy.com/resources/es/tecnologia/que-es-una-app-y-para-que-se-utiliza</a></li>
+      <hr>
+      <li><a href="https://www.youtube.com/watch?v=Hc6PrBQ2fRc&t=11
+">https://www.youtube.com/watch?v=Hc6PrBQ2fRc&t=11</a></li>
+      <hr>
+      <li><a href="https://www.youtube.com/watch?v=SQLDK1nPk_w">https://www.youtube.com/watch?v=SQLDK1nPk_w</a></li>
+      <hr>
+      <li><a href="https://www.youtube.com/watch?v=btnfthGbEcU&t=127">https://www.youtube.com/watch?v=btnfthGbEcU&t=127</a></li>
+      <hr>
+      <li><a href="https://abamobile.com/web/apps-multiplataforma-que-son-y-caracteristicas/">https://abamobile.com/web/apps-multiplataforma-que-son-y-caracteristicas/</a></li>
+      <hr>
+    </ol>
+    
 <button onclick="window.location.href='index.html'">Volver al inicio</button>    
 </body>
-</html>
+</html>                           

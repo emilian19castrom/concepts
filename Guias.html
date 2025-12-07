@@ -7,25 +7,112 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     <div class="item">
-        <h2><span class="icon">📚</span>Guías de Estilo y Bibliotecas de Componentes</h2>
-        <p>
-            Las guías de estilo definen reglas visuales y de interacción que deben seguir las aplicaciones para mantener coherencia.
-        </p>
-        <ul>
-            <li><strong>Material Design:</strong>  
-                Desarrollado por Google. Establece reglas para colores, sombras, animaciones, espaciados y componentes.</li>
+    <div class="item">
+    <h2><span class="icon">📚</span>Guías de Estilo y Componentes Visuales</h2>
+     <h2>¿Qué son las guías de estilo?</h2>
+      <p>Las guías de estilo (style guides) son documentos que definen las reglas, patrones y decisiones visuales y de interacción que deben seguirse al diseñar y desarrollar una interfaz. Su objetivo es asegurar coherencia, accesibilidad y eficiencia en el diseño de productos digitales.</p>
 
-            <li><strong>Human Interface Guidelines:</strong>  
-                Apple define cómo deben lucir y comportarse apps en iOS, watchOS, iPadOS y macOS.</li>
+      <h2>¿Qué son los componentes visuales?</h2>
+      <p>Los componentes visuales son elementos de interfaz reutilizables —como botones, tarjetas, menús, campos de formulario, modales y listas— que encapsulan estructura, comportamiento y estilos. Se implementan como piezas de una librería o sistema de diseño para acelerar el desarrollo y mantener uniformidad.</p>
 
-            <li><strong>Componentes reutilizables:</strong>  
-                Cards, modals, listas dinámicas, barras de navegación, widgets reutilizables.</li>
+      <h2>Importancia al desarrollar una app</h2>
+      <ul>
+        <li><strong>Consistencia:</strong> los usuarios aprenden patrones; la consistencia reduce la curva de aprendizaje y errores.</li>
+        <li><strong>Velocidad de desarrollo:</strong> los equipos reutilizan componentes en lugar de rediseñar desde cero.</li>
+        <li><strong>Calidad y mantenibilidad:</strong> los cambios globales se aplican con menos riesgo gracias a tokens y componentes centrales.</li>
+        <li><strong>Escalabilidad:</strong> facilita trabajar en equipos grandes y productos que crecen (múltiples plataformas, productos hermanos).</li>
+        <li><strong>Accesibilidad:</strong> las guías obligan a incorporar estándares de accesibilidad desde el principio.</li>
+        <li><strong>Branding coherente:</strong> asegura que la identidad visual sea reconocible y uniforme.</li>
+      </ul>
 
-            <li><strong>Diseño centrado en el usuario:</strong>  
-                Usabilidad, pruebas A/B, retroalimentación y consistencia en todos los elementos.</li>
-        </ul>
-    </div>
+      <h2>Componentes típicos de una guía de estilo / sistema de diseño</h2>
+      <ul>
+        <li><strong>Tokens de diseño:</strong> variables para color, tipografía, espaciado, radios, sombras, tamaños. (p. ej. --color-primary, --font-size-xl)</li>
+        <li><strong>Tipografía:</strong> familias, pesos, tamaños, alturas de línea y usos semánticos (títulos, subtítulos, cuerpo, captions).</li>
+        <li><strong>Paleta de colores:</strong> primarios, secundarios, neutrales, estados (hover, activo, disabled) y semánticos (error, éxito, advertencia).</li>
+        <li><strong>Iconografía:</strong> estilo de iconos, tamaños y reglas de uso (con o sin texto).</li>
+        <li><strong>Botones:</strong> variantes (primario, secundario, ghost), tamaños, estados y reglas de comportamiento.</li>
+        <li><strong>Formularios y controles:</strong> inputs, selects, checkboxes, radios, validación y mensajes de error.</li>
+        <li><strong>Navegación:</strong> barras, pestañas, drawers, breadcrumbs y patrones según plataforma.</li>
+        <li><strong>Tarjetas y listas:</strong> layout, uso de imagen y texto, jerarquía de información.</li>
+        <li><strong>Modales y paneles:</strong> uso responsable, accesibilidad (focus trap), cancelación y fallback.</li>
+        <li><strong>Feedback y estados:</strong> loaders, toasts, skeletons, mensajes de error y confirmación.</li>
+        <li><strong>Animaciones y motion:</strong> duración, easing, propósito y cuándo evitarlas.</li>
+        <li><strong>Patrones avanzados:</strong> tablas, paginación, filtros, acciones en lote.</li>
+        <li><strong>Documentación de código:</strong> nombres de clases, tokens, API de componentes, ejemplos y variantes.</li>
+      </ul>
+
+      <h2>Reglas habituales en las guías de estilo</h2>
+      <ul>
+        <li><strong>Usar tokens:</strong> evitar valores "mágicos": centralizar tamaños, colores y espaciados.</li>
+        <li><strong>Definir semántica:</strong> aplicar nombres que describan el propósito más que la apariencia (p. ej. <em>button-primary</em> en vez de <em>button-blue</em>).</li>
+        <li><strong>Priorizar accesibilidad:</strong> contraste mínimo, tamaño táctil (44–48px), soporte de lectores de pantalla y navegación por teclado).</li>
+        <li><strong>Documentar variantes:</strong> cada componente debe mostrar sus estados (hover, active, disabled) y una guía de uso.</li>
+        <li><strong>Mantener consistencia:</strong> reglas claras para espaciado, grid y alineación para evitar resultados dispares.</li>
+        <li><strong>Versionado:</strong> versionar el sistema de diseño para introducir cambios compatibles y planificados.</li>
+        <li><strong>Reglas de accesibilidad y localización:</strong> preparar para texto expansible, direcciones RTL y formatos locales (fechas, números).</li>
+        <li><strong>Regla de plataformas:</strong> especificar cuándo aplicar patrones nativos de cada plataforma (iOS/Android) y cuándo usar la UI unificada.</li>
+        <li><strong>Pruebas y ejemplos:</strong> incluir casos de uso reales y ejemplos de código para evitar interpretaciones erróneas.</li>
+      </ul>
+
+      <h2>Qué ofrecen (beneficios prácticos)</h2>
+      <ul>
+        <li><strong>Reducción de deuda técnica:</strong> menos código duplicado y menos inconsistencias.</li>
+        <li><strong>Ritmo de entrega más rápido:</strong> equipos de diseño y desarrollo trabajan con piezas prefabricadas.</li>
+        <li><strong>Mejor onboarding:</strong> nuevos miembros comprenden rápidamente las decisiones de diseño y el código.</li>
+        <li><strong>Mejor experiencia de usuario:</strong> interfaces predecibles y accesibles aumentan la confianza del usuario.</li>
+        <li><strong>Facilidad para experimentar:</strong> con componentes estandarizados es más fácil A/B test y variaciones de UI.</li>
+      </ul>
+
+      <h2>Herramientas y prácticas asociadas</h2>
+      <ul>
+        <li><strong>Librerías de componentes:</strong> Material UI, Ant Design, Fluent UI, Carbon, Bootstrap (web); componentes nativos en Android/iOS.</li>
+        <li><strong>Design Systems:</strong> Material Design, Fluent Design, Apple Human Interface Guidelines.</li>
+        <li><strong>Herramientas de diseño:</strong> Figma, Sketch, Adobe XD. Uso de librerías compartidas y componentes maestros.</li>
+        <li><strong>Documentación interactiva:</strong> Storybook, Zeroheight, Backlight para documentar y probar componentes.</li>
+        <li><strong>Design tokens:</strong> JSON/SCSS variables que se sincronizan entre diseño y código.</li>
+      </ul>
+
+      <h2>Qué se debe evitar al diseñar una interfaz</h2>
+      <ul>
+        <li><strong>Inconsistencias visuales:</strong> usar diferentes tamaños, colores o comportamientos para elementos con la misma función.</li>
+        <li><strong>Dependencia solo del color:</strong> no usar color como único indicador (añadir iconos o texto para accesibilidad).</li>
+        <li><strong>Textos pequeños o contrastes bajos:</strong> dificulta la legibilidad y rompe accesibilidad.</li>
+        <li><strong>Tocar objetivos demasiado pequeños:</strong> botones o elementos táctiles menores a 44px afectan usabilidad en móviles.</li>
+        <li><strong>Animaciones innecesarias o largas:</strong> distraen y pueden provocar mareo o lentitud percibida.</li>
+        <li><strong>Multiplicar fuentes y estilos:</strong> usar demasiadas familias o pesos tipográficos rompe jerarquía visual.</li>
+        <li><strong>Ignorar localización y expansión de texto:</strong> dejar que textos largos saturen los diseños sin planificar envoltura o truncado.</li>
+        <li><strong>Falta de documentación:</strong> confiar en la memoria del equipo en vez de documentar reglas y excepciones.</li>
+        <li><strong>Copiar sin adaptar:</strong> tomar patrones de otras plataformas sin considerar contexto y plataforma objetivo.</li>
+      </ul>
+
+      <h2>Ejemplos reales y por qué funcionan</h2>
+      <ul>
+        <li><strong>Google (Material Design):</strong> sistema coherente para web y móvil, con tokens, componentes y documentación detallada; facilita consistencia en productos grandes.</li>
+        <li><strong>Apple (Human Interface Guidelines):</strong> enfoque en claridad, profundidad y legibilidad; reglas estrictas para interacción que mantienen la experiencia nativa en iOS.</li>
+        <li><strong>IBM Carbon:</strong> pensado para productos empresariales con alto grado de consistencia, accesibilidad y componentes robustos para casos complejos.</li>
+      </ul>
+
+      <h2>Recomendaciones prácticas</h2>
+      <ol>
+        <li>Crear tokens desde el inicio y sincronizarlos entre diseño y código.</li>
+        <li>Documentar cada componente con ejemplos de uso y casos límite.</li>
+        <li>Incorporar accesibilidad como requisito, no como post-proceso.</li>
+        <li>Versionar el sistema y comunicar actualizaciones al equipo.
+        </li>
+        <li>Medir impacto: usar métricas (errores de UI, tiempos de tarea, NPS) al introducir cambios.</li>
+      </ol>
+      <h2>Referencias</h2>
+      <ol>
+        <li><a href="https://developer.android.com/topic/architecture?hl=es-419">https://developer.android.com/topic/architecture?hl=es-419</a></li>
+        <hr>
+        <li><a href="https://www.sortlist.es/blog/guia-definitiva-diseno-aplicaciones-moviles/">https://www.sortlist.es/blog/guia-definitiva-diseno-aplicaciones-moviles/</a></li>
+        <hr>
+        <li><a href="https://design-toolkit.recursos.uoc.edu/es/guias-de-estilo/">https://design-toolkit.recursos.uoc.edu/es/guias-de-estilo/</a></li>
+        <hr>
+        <li><a href="https://www.justinmind.com/es/ui-diseno">https://www.justinmind.com/es/ui-diseno</a></li>
+        <hr>
+      </ol>
 <button onclick="window.location.href='index.html'">Volver al inicio</button>
 </body>
 </html>

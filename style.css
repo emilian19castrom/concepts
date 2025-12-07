@@ -1,193 +1,96 @@
-/* ------------------------------
-   TIPOGRAFÍA GLOBAL
------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
+/* === Estilos generales === */
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
-    background: #f0f2f5;
-    color: #333;
-    line-height: 1.6;
+    background: #f4f4f4;
+    color: #222;
 }
 
-/* ------------------------------
-   HEADER MODERNO
------------------------------- */
 header {
-    background: #1e1e2f;
+    background: #268bf0;
     color: #fff;
-    padding: 18px 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    border-bottom: 3px solid #4a4aff;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    padding: 15px;
+    text-align: center;
 }
 
-header h1 {
-    font-weight: 600;
-    font-size: 1.6rem;
-    margin: 0;
+h1, h2 {
+    margin: 10px 0;
 }
 
-header button {
-    background: #4a4aff;
-    border: none;
-    color: white;
-    padding: 10px 16px;
-    border-radius: 8px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: 0.25s;
-}
-
-header button:hover {
-    background: #6868ff;
-}
-
-/* ------------------------------
-   CONTENEDOR PRINCIPAL
------------------------------- */
-main {
-    padding: 25px;
+/* === Contenedor del contenido principal === */
+#mainContent {
+    padding: 20px;
     max-width: 900px;
     margin: auto;
 }
 
-
-/* ------------------------------
-   TARJETAS MODERNAS
------------------------------- */
-.item {
-    background: white;
-    padding: 18px;
-    margin-bottom: 15px;
-    border-radius: 14px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-    transition: 0.25s;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* === Lista de enlaces como tarjetas === */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
 }
 
-.item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+/* === Tarjetas individuales === */
+ul li {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.item-title {
-    font-size: 1.1rem;
-    font-weight: 600;
+/* Efecto hover */
+ul li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.20);
 }
 
-.item-description {
-    font-size: 0.95rem;
-    opacity: 0.7;
-}
-
-/* Icono o flecha al final */
-.item .arrow {
-    font-size: 1.2rem;
-    opacity: 0.7;
-}
-
-
-/* ------------------------------
-   FORMULARIOS MODERNOS
------------------------------- */
-input {
+/* === Estilo de los enlaces === */
+ul li a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-size: 16px;
+    font-weight: bold;
     display: block;
-    margin-bottom: 12px;
-    padding: 12px;
-    width: 100%;
-    max-width: 380px;
-    border: 2px solid #d0d0ff;
-    border-radius: 8px;
-    transition: 0.2s;
-    background: #fafaff;
 }
 
-input:focus {
-    border-color: #4a4aff;
-    outline: none;
-    background: white;
+/* Hover sobre el texto */
+ul li a:hover {
+    color: #1abc9c;
 }
 
-button {
-    padding: 12px 16px;
-    cursor: pointer;
-    border: none;
-    background: #4a4aff;
-    color: #fff;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: 0.2s;
-}
-
-button:hover {
-    background: #6a6aff;
-}
-
-#authSection,
-#mainContent {
+/* === Inputs y botones del login === */
+#authSection {
+    text-align: center;
     padding: 20px;
+    max-width: 400px;
+    margin: auto;
 }
 
-/* ------------------------------
-   RESPONSIVE
------------------------------- */
-
-/* Móviles */
-@media (max-width: 480px) {
-
-    header {
-        flex-direction: column;
-        text-align: center;
-        gap: 12px;
-    }
-
-    header h1 {
-        font-size: 1.35rem;
-    }
-
-    main {
-        padding: 15px;
-    }
-
-    .item {
-        padding: 15px;
-        flex-direction: column;
-        text-align: left;
-        gap: 8px;
-    }
-
-    button {
-        width: 100%;
-        margin: 5px 0;
-    }
+#authSection input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
 }
 
-/* Tablets */
-@media (min-width: 480px) and (max-width: 900px) {
-
-    main {
-        padding: 20px;
-    }
-
-    .item {
-        padding: 16px;
-    }
-
-    input {
-        max-width: 420px;
-    }
+#authSection button {
+    width: 95%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #2c3e50;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-/* Escritorio */
-@media (min-width: 900px) {
-    main {
-        width: 70%;
-    }
+#authSection button:hover {
+    background: #1abc9c;
 }

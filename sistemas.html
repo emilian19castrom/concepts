@@ -7,29 +7,168 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="item">
-        <h2><span class="icon">📱</span>Sistemas Operativos Móviles y sus Arquitecturas</h2>
-        <p>
-            Los sistemas operativos móviles proporcionan la capa fundamental para ejecutar aplicaciones, gestionar el hardware del dispositivo 
-            y ofrecer servicios esenciales como conectividad, almacenamiento, seguridad y multitarea. 
-        </p>
-        <ul>
-            <li><strong>Android:</strong> Basado en el kernel de Linux, utiliza una arquitectura en capas: kernel, hardware abstraction layer (HAL), 
-                librerías nativas, ART (Android Runtime), frameworks de servicios y capa de aplicaciones. Su naturaleza abierta facilita la personalización, 
-                lo que lo hace predominante en fabricantes como Samsung, Xiaomi y Motorola.</li>
+<div class="item">
+    <h2><span class="icon">📱</span>Sistemas Operativos Móviles y sus Arquitecturas</h2>
+     <h1>Sistemas Operativos Móviles</h1>
+  <p>Un sistema operativo móvil (SO móvil) es el software que gestiona el hardware del dispositivo móvil y proporciona servicios y una plataforma para ejecutar aplicaciones. Incluye la gestión de procesos, memoria, interfaces de usuario, controladores de hardware y servicios de seguridad.</p>
 
-            <li><strong>iOS:</strong> Sistema operativo cerrado desarrollado por Apple. Basado en Darwin (similar a UNIX), contiene capas como Core OS,
-                Core Services, Media, y Cocoa Touch. Su integración con hardware permite gran optimización, fluidez y seguridad.</li>
+  <h2>Principales sistemas operativos móviles</h2>
+  <ul>
+    <li>Android</li>
+    <li>iOS</li>
+    <li>HarmonyOS (Huawei)</li>
+    <li>KaiOS</li>
+    <li>Otros: Tizen, Sailfish OS (menciones históricas y nicho)</li>
+  </ul>
 
-            <li><strong>HarmonyOS:</strong> Sistema distribuido que permite que múltiples dispositivos (tablets, relojes, IoT) funcionen como uno solo.
-                Usa microkernel y capacidades compartidas entre dispositivos.</li>
+  <hr>
+  <h2>Android</h2>
+  <h3>Qué es</h3>
+  <p>Android es un sistema operativo móvil desarrollado por Google, basado en el kernel de Linux y diseñado principalmente para pantallas táctiles como teléfonos y tablets.</p>
 
-            <li><strong>Capas típicas en un SO móvil:</strong> kernel, manejadores de hardware, librerías multimedia, frameworks de aplicaciones, 
-                entorno de ejecución y capa gráfica.</li>
-        </ul>
-    </div>
+  <h3>Características</h3>
+  <ul>
+    <li>Open source (AOSP) con capas propietarias (Google Mobile Services).</li>
+    <li>Gran ecosistema de aplicaciones (Google Play y tiendas de terceros).</li>
+    <li>Altamente configurable por fabricantes (OEMs).</li>
+    <li>Soporte para múltiples arquitecturas de CPU (ARM, x86, RISC-V experimentalmente).</li>
+  </ul>
 
+  <h3>Arquitectura (resumen)</h3>
+  <ol>
+    <li>Linux Kernel: gestión de drivers, seguridad y abstracción de hardware.</li>
+    <li>Bibliotecas nativas (libc, WebKit, SSL, etc.).</li>
+    <li>Android Runtime (ART) para ejecutar aplicaciones Java/Kotlin.</li>
+    <li>Framework de aplicaciones (APIs Java/Kotlin).</li>
+    <li>Aplicaciones (apps de usuario y del sistema).</li>
+  </ol>
 
+  <h3>Ventajas</h3>
+  <ul>
+    <li>Amplia cuota de mercado global y ecosistema de apps.</li>
+    <li>Flexibilidad y personalización para dispositivos y fabricantes.</li>
+    <li>Fuerte soporte para desarrolladores y herramientas.</li>
+  </ul>
+
+  <h3>Desventajas</h3>
+  <ul>
+    <li>Fragmentación (versiones y personalizaciones por fabricante).</li>
+    <li>Posibles problemas de seguridad por tiendas/firmwares de terceros.</li>
+    <li>Actualizaciones dependientes de OEMs y operadores en muchos casos.</li>
+  </ul>
+
+  <hr>
+  <h2>iOS</h2>
+  <h3>Qué es</h3>
+  <p>iOS es el sistema operativo móvil de Apple para iPhone (y derivaciones para iPad), cerrado y optimizado para hardware Apple con fuerte control de la experiencia y la seguridad.</p>
+
+  <h3>Características</h3>
+  <ul>
+    <li>Plataforma cerrada y controlada por Apple (hardware y software integrados).</li>
+    <li>Experiencia de usuario consistente y actualizaciones centralizadas.</li>
+    <li>Enfoque en privacidad y seguridad; App Store controlada.</li>
+  </ul>
+
+  <h3>Arquitectura (resumen)</h3>
+  <ol>
+    <li>Hardware (SoC Apple - CPU, GPU, Secure Enclave).</li>
+    <li>Kernel XNU (heredado de Darwin/macOS).</li>
+    <li>Servicios de bajo nivel y frameworks (Core OS, Core Services).</li>
+    <li>Frameworks de UI (UIKit, SwiftUI) y APIs de alto nivel.</li>
+    <li>Aplicaciones de usuario y sistema.</li>
+  </ol>
+
+  <h3>Ventajas</h3>
+  <ul>
+    <li>Rendimiento y optimización fuertes por control de hardware y software.</li>
+    <li>Actualizaciones rápidas y homogéneas para los dispositivos soportados.</li>
+    <li>Elevados estándares de seguridad y calidad de apps en App Store.</li>
+  </ul>
+
+  <h3>Desventajas</h3>
+  <ul>
+    <li>Menor flexibilidad para fabricantes y usuarios avanzados.</li>
+    <li>Menor personalización y ecosistema más cerrado.</li>
+    <li>Dependencia del hardware de Apple (coste y disponibilidad).</li>
+  </ul>
+
+  <hr>
+  <h2>HarmonyOS</h2>
+  <h3>Qué es</h3>
+  <p>HarmonyOS (Hongmeng) es el sistema operativo de Huawei orientado a un ecosistema de dispositivos conectados (smartphones, televisores, IoT). Está diseñado para funcionar en varios tipos de hardware y enfatizar la integración del ecosistema.</p>
+
+  <h3>Características</h3>
+  <ul>
+    <li>Enfoque en ecosistema: integración entre dispositivos y distribución de tareas.</li>
+    <li>Arquitectura basada en microkernel para mejorar seguridad y modularidad (en ciertas versiones).</li>
+    <li>Compatibilidad con aplicaciones Android en muchos dispositivos (mediante capas de compatibilidad).</li>
+  </ul>
+
+  <h3>Arquitectura (resumen)</h3>
+  <ol>
+    <li>Microkernel (enfocado a seguridad y comunicación entre dispositivos).</li>
+    <li>Módulos y servicios distribuidos (para IoT y dispositivos heterogéneos).</li>
+    <li>Motor de ejecución para apps y capas de compatibilidad Android cuando aplica.</li>
+  </ol>
+
+  <h3>Ventajas</h3>
+  <ul>
+    <li>Diseñado para alto grado de integración entre dispositivos (ecosistema).</li>
+    <li>Mejoras de seguridad potenciales por microkernel.</li>
+    <li>Posibilidad de optimizar en hardware Huawei y servicios propios.</li>
+  </ul>
+
+  <h3>Desventajas</h3>
+  <ul>
+    <li>Ecosistema global y base de desarrolladores más limitado fuera de China.</li>
+    <li>Compatibilidad de apps y madurez comparada con Android/iOS varía según región.</li>
+  </ul>
+
+  <hr>
+  <h2>KaiOS</h2>
+  <h3>Qué es</h3>
+  <p>KaiOS es un sistema operativo ligero basado en Linux diseñado para feature phones y dispositivos con recursos limitados, que soporta aplicaciones web (HTML/CSS/JS) y conectividad esencial (4G, GPS, Wi-Fi).</p>
+
+  <h3>Características</h3>
+  <ul>
+    <li>Orientado a dispositivos con memoria y potencia limitadas.</li>
+    <li>Permite apps web (KaiStore) e incluye apps populares adaptadas (WhatsApp, YouTube, etc.).</li>
+    <li>Optimizado para larga duración de batería y bajo coste de hardware.</li>
+  </ul>
+
+  <h3>Arquitectura (resumen)</h3>
+  <ol>
+    <li>Linux ligero en el núcleo.</li>
+    <li>Capas que permiten ejecución de aplicaciones web sobre motores como Gecko o WebView ligero.</li>
+    <li>Servicios y APIs adaptadas a feature phones (llamadas, SMS, conectividad).</li>
+  </ol>
+
+  <h3>Ventajas</h3>
+  <ul>
+    <li>Permite acceso a internet y apps en dispositivos muy económicos.</li>
+    <li>Menor consumo de recursos y buena duración de batería.</li>
+    <li>Importante adopción en mercados emergentes.</li>
+  </ul>
+
+  <h3>Desventajas</h3>
+  <ul>
+    <li>Capacidades limitadas frente a smartphones completos (multitarea y rendimiento).</li>
+    <li>Menor ecosistema de apps comparado con Android/iOS.</li>
+  </ul>
+
+  <hr>
+  <h2>Otros sistemas (mención)</h2>
+  <p>Tizen y Sailfish OS son ejemplos de sistemas alternativos; Tizen se ha usado en wearables y televisores de Samsung, mientras que Sailfish sirve a nichos y entusiastas. Históricamente hubo intentos como Windows Phone que no lograron mantener cuota de mercado.</p>
+  <h2>Referencias</h2>
+  <ol>
+    <li><a href="https://www.techtarget.com/searchmobilecomputing/definition/mobile-operating-system">https://www.techtarget.com/searchmobilecomputing/definition/mobile-operating-system</a></li>
+    <hr>
+    <li><a href="https://appmaster.io/es/glossary/sistema-operativo-movil-por-ejemplo-android-ios">https://appmaster.io/es/glossary/sistema-operativo-movil-por-ejemplo-android-ios</a></li>
+    <hr>
+    <li><a href="https://www.youtube.com/watch?v=2QeGKUkeRF0">https://www.youtube.com/watch?v=2QeGKUkeRF0</a></li>
+    <hr>
+  </ol>
+  
 <button onclick="window.location.href='index.html'">Volver al inicio</button>
 </body>
 </html>

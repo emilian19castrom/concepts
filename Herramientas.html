@@ -7,18 +7,174 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     <div class="item">
-        <h2><span class="icon">🧩</span>Herramientas de Control de Versiones</h2>
-        <p>
-            El control de versiones permite trabajar en equipo, mantener historial de cambios y distribuir código de forma segura.
-        </p>
-        <ul>
-            <li><strong>Git:</strong> Sistema distribuido basado en snapshots.</li>
-            <li><strong>GitHub, GitLab, Bitbucket:</strong> Plataformas de colaboración, CI/CD, issues, pull requests.</li>
-            <li><strong>Flujos comunes:</strong> Git Flow, GitHub Flow, trunk-based development.</li>
-            <li>Permiten revertir cambios, trabajar en ramas, revisar código y automatizar despliegues.</li>
-        </ul>
-    </div>
+    <div class="item">
+    <h2><span class="icon">🧩</span>Herramientas de control de Versiones</h2>
+    <p>Las herramientas de control de versiones (VCS) permiten registrar, gestionar y colaborar sobre cambios en archivos y proyectos a lo largo del tiempo. Ayudan a mantener historial, revertir cambios, trabajar en ramas y coordinar aportes de múltiples desarrolladores.</p>
+
+  <h2>Tipos principales</h2>
+  <ul>
+    <li><strong>Centralizadas:</strong> un servidor central almacena la historia (ej. Subversion, CVS).</li>
+    <li><strong>Distribuidas (DVCS):</strong> cada desarrollador tiene una copia completa del repositorio (ej. Git, Mercurial).</li>
+
+  </ul>
+
+  <hr>
+  <h2>Git</h2>
+  <p><strong>Qué es:</strong> Git es un sistema de control de versiones distribuido, rápido y orientado a manejar proyectos grandes con muchas ramas y contribuidores.</p>
+  <p><strong>Características:</strong></p>
+  <ul>
+    <li>Distribuido: cada clon contiene todo el historial.</li>
+    <li>Rápido en operaciones locales (commit, branch, merge).</li>
+    <li>Sólido sistema de ramas y fusiones.</li>
+  </ul>
+  <p><strong>Ventajas:</strong></p>
+  <ul>
+    <li>Excelente para flujos de trabajo descentralizados y open-source.</li>
+    <li>Amplio ecosistema (GitHub, GitLab, Bitbucket).</li>
+    <li>Escala para grandes repositorios (ej. Linux kernel).</li>
+  </ul>
+  <p><strong>Desventajas:</strong></p>
+  <ul>
+    <li>Curva de aprendizaje — conceptos como rebase pueden confundir.</li>
+    <li>Operaciones complejas en repositorios very large (aunque existen soluciones).</li>
+  </ul>
+  <p><strong>Ejemplos de proyectos que usan Git:</strong> Linux kernel, proyectos de Google/Android, la mayoría de proyectos en GitHub.</p>
+
+  <hr>
+  <h2>Apache Subversion (SVN)</h2>
+  <p><strong>Qué es:</strong> Subversion es un sistema de control de versiones centralizado diseñado como sucesor de CVS, con soporte para ramas, etiquetas y control de versiones a nivel de archivos y directorios.</p>
+  <p><strong>Características:</strong></p>
+  <ul>
+    <li>Modelo centralizado con servidor único que contiene el repositorio.</li>
+    <li>Operaciones atómicas de commit.</li>
+    <li>Soporte amplio en IDEs y herramientas corporativas.</li>
+  </ul>
+  <p><strong>Ventajas:</strong></p>
+  <ul>
+    <li>Modelo sencillo y predecible para equipos que prefieren control central.</li>
+    <li>Buena integración con infraestructuras empresariales existentes.</li>
+  </ul>
+  <p><strong>Desventajas:</strong></p>
+  <ul>
+    <li>Menos flexible que sistemas distribuidos para ramas y trabajo offline.</li>
+    <li>Escalado y rendimiento en proyectos muy grandes pueden ser problemáticos versus Git.</li>
+  </ul>
+  <p><strong>Ejemplos de proyectos que han usado Subversion:</strong> múltiples proyectos de la Apache Software Foundation, FreeBSD (históricamente), varios proyectos corporativos.</p>
+
+  <hr>
+  <h2>Mercurial</h2>
+  <p><strong>Qué es:</strong> Mercurial es un sistema de control de versiones distribuido, con un enfoque en simplicidad y velocidad para manejar repositorios de cualquier tamaño.</p>
+  <p><strong>Características:</strong></p>
+  <ul>
+    <li>Distribuido como Git, con comandos intuitivos y consistencia de interfaz.</li>
+    <li>Buen manejo de repositorios grandes (escala en Facebook y otros).</li>
+  </ul>
+  <p><strong>Ventajas:</strong></p>
+  <ul>
+    <li>Interfaz más consistente y a veces más fácil de aprender que Git para principiantes.</li>
+    <li>Rendimiento sólido en repositorios grandes.</li>
+  </ul>
+  <p><strong>Desventajas:</strong></p>
+  <ul>
+    <li>Menor ecosistema y hoy en día menos soporte en servicios que antes (por ejemplo Bitbucket discontinuó Mercurial en 2020).</li>
+  </ul>
+  <p><strong>Ejemplos de proyectos que usaron Mercurial:</strong> Mozilla (Firefox) históricamente, Facebook internamente en ciertos flujos de trabajo.</p>
+
+  <hr>
+  <h2>Perforce Helix Core</h2>
+  <p><strong>Qué es:</strong> Helix Core (Perforce) es una solución empresarial de control de versiones centrada en rendimiento, escalabilidad y manejo de archivos grandes (multimedia, arte, binarios).</p>
+  <p><strong>Características:</strong></p>
+  <ul>
+    <li>Modelo centralizado con servidor(s) optimizados para grandes equipos.</li>
+    <li>Soporta archivos binarios y grandes assets (muy usado en juegos y multimedia).</li>
+    <li>Herramientas de control de acceso, auditoría y revisiones avanzadas.</li>
+  </ul>
+  <p><strong>Ventajas:</strong></p>
+  <ul>
+    <li>Excelente rendimiento en repositorios con archivos grandes y equipos distribuidos.</li>
+    <li>Funciones empresariales: permisos, auditoría y soporte profesional.</li>
+  </ul>
+  <p><strong>Desventajas:</strong></p>
+  <ul>
+    <li>Licenciamiento y coste, especialmente para equipos pequeños.</li>
+    <li>Modelo menos "social" que Git; integración con flujos OSS más limitada.</li>
+  </ul>
+  <p><strong>Ejemplos de empresas que usan Perforce:</strong> estudios de videojuegos y grandes empresas como Ubisoft, Nintendo, Pixar y muchas AAA studios.</p>
+
+  <hr>
+  <h2>CVS (Concurrent Versions System)</h2>
+  <p><strong>Qué es:</strong> CVS es uno de los sistemas de control de versiones históricos; fue muy usado en los 90s y principios de los 2000s como una solución centralizada para proyectos de software.</p>
+  <p><strong>Características, ventajas y desventajas:</strong></p>
+  <ul>
+    <li>Modelo centralizado; más antiguo y con limitaciones en el manejo de metadatos y atomicidad del commit.</li>
+    <li>Ventaja: amplio soporte histórico y herramientas; desventaja: muchas limitaciones frente a SVN y DVCS modernos.</li>
+  </ul>
+  <p><strong>Ejemplos históricos:</strong> Proyectos como FreeBSD y otros proyectos open source migraron desde CVS a Subversion o Git con el tiempo.</p>
+
+  <hr>
+  <h2>Comparativa rápida</h2>
+  <table border="1" cellpadding="6">
+    <tr>
+      <th>Herramienta</th>
+      <th>Tipo</th>
+      <th>Fuerza</th>
+      <th>Cuando usarla</th>
+    </tr>
+    <tr>
+      <td>Git</td>
+      <td>Distribuida</td>
+      <td>Velocidad, branching, ecosistema</td>
+      <td>Proyectos colaborativos, open-source, equipos distribuidos</td>
+    </tr>
+    <tr>
+      <td>Subversion</td>
+      <td>Centralizada</td>
+      <td>Simplicidad para equipos centralizados, control de versiones a nivel de archivo</td>
+      <td>Equipos corporativos tradicionales que requieren control central</td>
+    </tr>
+    <tr>
+      <td>Mercurial</td>
+      <td>Distribuida</td>
+      <td>Consistencia y facilidad de uso</td>
+      <td>Equipos que quieren DVCS con interfaz más uniforme</td>
+    </tr>
+    <tr>
+      <td>Perforce</td>
+      <td>Centralizada/Enterprise</td>
+      <td>Rendimiento con archivos grandes y control empresarial</td>
+      <td>Industria de videojuegos, multimedia y empresas grandes</td>
+    </tr>
+    <tr>
+      <td>CVS</td>
+      <td>Centralizada (histórica)</td>
+      <td>Amplio soporte histórico</td>
+      <td>Herencia histórica; migrar a opciones modernas</td>
+    </tr>
+  </table>
+
+  <hr>
+  <h2>Buenas prácticas al usar VCS</h2>
+  <ul>
+    <li>Hacer commits pequeños y con mensajes claros.</li>
+    <li>Trabajar en ramas para desarrollar features y usar Pull/Merge Requests para revisión de código.</li>
+    <li>Sincronizar cambios frecuentemente y resolver conflictos pronto.</li>
+    <li>Usar herramientas de CI/CD integradas al repositorio para pruebas automáticas.</li>
+    <li>Resguardar repositorios críticos y aplicar políticas de acceso y backups.</li>
+  </ul>
+  <h2>Referencias</h2>
+  <ol>
+    <li><a href="https://hackernoon.com/lang/es/top-10-sistemas-de-control-de-versiones-4d314cf7adea">https://hackernoon.com/lang/es/top-10-sistemas-de-control-de-versiones-4d314cf7adea</a></li>
+    <hr>
+    <li><a href="https://about.gitlab.com/es/topics/version-control/">https://about.gitlab.com/es/topics/version-control/</a></li>
+    <hr>
+    <li><a href="https://learn.microsoft.com/es-es/devops/develop/git/what-is-version-control">https://learn.microsoft.com/es-es/devops/develop/git/what-is-version-control</a></li>
+    <hr>
+    <li><a href="https://welearndata.com/git/control-de-versiones-que-es-tipos-herramientas/">https://welearndata.com/git/control-de-versiones-que-es-tipos-herramientas/</a></li>
+    <hr>
+    <li><a href="https://owdt.com/insight/the-pros-and-cons-of-integrating-git-version-control-into-wordpress-projects/">https://owdt.com/insight/the-pros-and-cons-of-integrating-git-version-control-into-wordpress-projects/</a></li>
+    <hr>
+  </ol>
+    
 <button onclick="window.location.href='index.html'">Volver al inicio</button>
 </body>
 </html>

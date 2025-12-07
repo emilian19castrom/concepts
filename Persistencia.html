@@ -7,20 +7,115 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
- <div class="item">
+<div class="item">
     <h2><span class="icon">💾</span>Persistencia y Acceso a Datos</h2>
-    <p>
-    La persistencia permite almacenar información localmente o consumir datos mediante APIs remotas.
-    </p>
-    <ul>
-        <li><strong>SQLite:</strong> Base de datos local en dispositivos móviles.</li>
-        <li><strong>Room (Android):</strong> Abstracción ORM para bases de datos.</li>
-        <li><strong>CoreData (iOS):</strong> Framework para manejo de objetos persistentes.</li>
-        <li><strong>APIs:</strong> Comunicación mediante JSON, REST, GraphQL o WebSockets.</li>
-        <li><strong>Almacenamiento local:</strong> SharedPreferences/UserDefaults, archivos internos, almacenamiento seguro.</li>
-        <li><strong>Sincronización:</strong> Manejo de datos offline-first y estrategias de caché.</li>
-    </ul>
-</div>
-    
+     <h2>¿Qué es la persistencia de datos?</h2>
+  <p>La persistencia es la capacidad de almacenar información de forma que permanezca disponible incluso después de cerrar la aplicación o apagar el dispositivo. Sirve para mantener el estado de la aplicación, datos de usuario, cachés y cualquier información necesaria para la continuidad del servicio.</p>
+
+  <h2>¿Para qué sirve?</h2>
+  <ul>
+    <li>Guardar credenciales y preferencias del usuario.</li>
+    <li>Permitir funcionamiento offline (cachear contenido).</li>
+    <li>Almacenar datos de la aplicación (documentos, mensajes, configuraciones).</li>
+    <li>Mejorar rendimiento evitando solicitar datos repetidos al servidor.</li>
+    <li>Soportar sincronización y copias de seguridad.</li>
+  </ul>
+
+  <h2>Clasificación de mecanismos (resumen)</h2>
+  <ul>
+    <li><strong>Almacenamiento local simple (clave-valor):</strong> SharedPreferences/Datastore (Android), UserDefaults (iOS), localStorage (web), Keychain/Keystore para datos sensibles.</li>
+    <li><strong>Bases de datos locales:</strong> SQLite (relacional), Room (abstracción sobre SQLite en Android), Core Data (iOS object-graph), Realm, ObjectBox (bases de datos orientadas a objetos/NoSQL).</li>
+    <li><strong>Almacenamiento en archivos:</strong> ficheros planos, JSON, protobuf, imágenes y assets en el sistema de archivos del app.</li>
+    <li><strong>Almacenamiento en la nube / BaaS:</strong> Firebase Realtime Database, Cloud Firestore, Backend propio vía REST/GraphQL, sincronización entre dispositivos.</li>
+    <li><strong>Storage especializado:</strong> Cloud storage para archivos grandes (S3, Firebase Storage) y servicios de sincronización en segundo plano.</li>
+  </ul>
+
+  <hr>
+  <h2>Herramientas y mecanismos (descripción, ventajas y desventajas)</h2>
+
+  <h3>SharedPreferences / DataStore (Android) — UserDefaults (iOS)</h3>
+  <p><strong>En qué consisten:</strong> almacenamiento clave-valor para datos simples y preferencias.</p>
+  <p><strong>Ventajas:</strong> fácil uso, ideal para configuraciones y banderas; operaciones rápidas.</p>
+  <p><strong>Desventajas:</strong> no adecuado para datos complejos o grandes; no optimizado para consultas avanzadas.</p>
+  <p><strong>Casos de uso:</strong> preferencias de usuario, token de sesión (aunque para datos sensibles usar Keychain/Keystore).</p>
+
+  <h3>Keychain (iOS) / Android Keystore</h3>
+  <p><strong>En qué consisten:</strong> almacenes seguros para credenciales, tokens y secretos criptográficos, protegidos por hardware y/o sistema operativo.</p>
+  <p><strong>Ventajas:</strong> seguridad superior, cifrado y protección por el sistema.</p>
+  <p><strong>Desventajas:</strong> APIs más complejas y limitaciones en sincronización entre dispositivos (requiere iCloud Keychain, etc.).</p>
+
+  <h3>SQLite</h3>
+  <p><strong>En qué consiste:</strong> base de datos relacional embebida, liviana y ampliamente usada en dispositivos móviles.</p>
+  <p><strong>Ventajas:</strong> estable, ligera, soporte SQL, amplia compatibilidad y control fino sobre consultas y transacciones.</p>
+  <p><strong>Desventajas:</strong> requiere manejo manual de esquemas y mapeo objeto-relacional; mayor boilerplate comparado con soluciones objeto-orientadas.</p>
+
+  <h3>Room (Android)</h3>
+  <p><strong>En qué consiste:</strong> una capa de abstracción sobre SQLite que reduce boilerplate, hace validación de consultas en tiempo de compilación y se integra con LiveData/Flow.</p>
+  <p><strong>Ventajas:</strong> integración con el ecosistema Android, migraciones más sencillas y menor posibilidad de errores en consultas SQL.</p>
+  <p><strong>Desventajas:</strong> añade una capa extra y cierta complejidad en casos muy personalizados.</p>
+
+  <h3>Core Data (iOS)</h3>
+  <p><strong>En qué consiste:</strong> framework de Apple para persistencia que actúa como un object-graph manager (no es solo una base de datos relacional), con soporte para relaciones y consultas eficientes.</p>
+  <p><strong>Ventajas:</strong> integración nativa, optimizaciones automáticas y herramientas (model editor, migrations).</p>
+  <p><strong>Desventajas:</strong> curva de aprendizaje; comportamiento complejo si no se entiende su modelo de objetos y contexto.</p>
+
+  <h3>Realm</h3>
+  <p><strong>En qué consiste:</strong> base de datos móvil orientada a objetos (NoSQL) que permite mapear directamente objetos sin necesidad de SQL.</p>
+  <p><strong>Ventajas:</strong> rendimiento alto en muchos casos, API simple para objetos y sincronización opcional (Realm Sync).</p>
+  <p><strong>Desventajas:</strong> dependencia de una librería externa y consideraciones de licencia/uso; puede aumentar el tamaño del binario.</p>
+
+  <h3>ObjectBox</h3>
+  <p><strong>En qué consiste:</strong> base de datos orientada a objetos centrada en rendimiento y baja latencia en móviles.</p>
+  <p><strong>Ventajas:</strong> alto rendimiento, enfoque minimalista para mapeo objeto-relacional.</p>
+  <p><strong>Desventajas:</strong> menor adopción que SQLite/Realm; dependencia externa.</p>
+
+  <h3>IndexedDB / localStorage (PWA / Web)</h3>
+  <p><strong>En qué consisten:</strong> APIs del navegador para almacenamiento local: localStorage (sincronía, clave-valor) e IndexedDB (NoSQL, transaccional, asíncrono) para PWA y apps web móviles.</p>
+  <p><strong>Ventajas:</strong> persistencia en navegador, disponible offline y compatible con Service Workers y Cache API.</p>
+  <p><strong>Desventajas:</strong> diferencias entre navegadores, API compleja (IndexedDB) y limitaciones de espacio/quota.</p>
+
+  <h3>Firebase Realtime Database y Cloud Firestore</h3>
+  <p><strong>En qué consisten:</strong> bases de datos en la nube (BaaS) que sincronizan datos en tiempo real entre clientes y servidor con librerías cliente para Android, iOS y web.</p>
+  <p><strong>Ventajas:</strong> sincronización en tiempo real, autenticación integrada, escalado gestionado y fácil integración multiplataforma.</p>
+  <p><strong>Desventajas:</strong> coste creciente según uso, dependencia de proveedor, consideraciones de latencia y modelo de datos NoSQL que puede complicar ciertas consultas.</p>
+
+  <h3>Backend propio (REST / GraphQL)</h3>
+  <p><strong>En qué consiste:</strong> servicio controlado por el equipo de desarrollo que expone APIs (REST/GraphQL) y usa bases de datos servidoras (SQL/NoSQL) para persistencia centralizada.</p>
+  <p><strong>Ventajas:</strong> control total del modelo de datos, seguridad y lógica de negocio; personalización total.</p>
+  <p><strong>Desventajas:</strong> mayor coste operativo, necesidad de infraestructuras, y responsabilidad de escalado y mantenimiento.</p>
+
+  <hr>
+  <h2>Patrones y consideraciones</h2>
+  <ul>
+    <li><strong>Cache-Aside:</strong> cachear datos localmente y actualizar desde servidor cuando sea necesario.</li>
+    <li><strong>Sync bidireccional:</strong> manejar conflictos y merges cuando el cliente y servidor actualizan los mismos datos (resolución basada en marca de tiempo, CRDTs, reglas de negocio).</li>
+    <li><strong>Encriptación en reposo:</strong> especialmente para datos sensibles, usar cifrado y almacenes seguros.</li>
+    <li><strong>Migraciones:</strong> planear cambios en esquemas y migraciones con herramientas (Room, Core Data ofrecen soporte).</li>
+    <li><strong>Pruebas y monitorización:</strong> incluir pruebas de integridad y monitorizar errores de sincronización y fallos en persistencia.</li>
+  </ul>
+
+  <hr>
+  <h2>ventajas y desventajas</h2>
+  <table border="1" cellpadding="6">
+    <tr><th>Mecanismo</th><th>Ventajas</th><th>Desventajas</th></tr>
+    <tr><td>Clave-valor (SharedPrefs/UserDefaults)</td><td>Sencillo, rápido</td><td>No apto para datos complejos</td></tr>
+    <tr><td>SQLite / Room</td><td>Control SQL, estable, eficiente</td><td>Más boilerplate, requiere diseño de esquema</td></tr>
+    <tr><td>Core Data</td><td>Object-graph, optimizado para iOS</td><td>Curva de aprendizaje, complejo</td></tr>
+    <tr><td>Realm / ObjectBox</td><td>APIs orientadas a objetos, buen rendimiento</td><td>Dependencia externa, tamaño binario</td></tr>
+    <tr><td>IndexedDB (PWA)</td><td>Transaccional, offline para web</td><td>API compleja, diferencias entre navegadores</td></tr>
+    <tr><td>Firebase / Cloud</td><td>Sincronización, escalado gestionado, BaaS</td><td>Coste, dependencia del proveedor</td></tr>
+  </table>
+
+  <h2>Referencias</h2>
+  <ol>
+    <li><a href="https://www.mongodb.com/resources/basics/databases/data-persistence">https://www.mongodb.com/resources/basics/databases/data-persistence</a></li>
+    <hr>
+    <li><a href="https://rivery.io/data-learning-center/data-persistence/">https://rivery.io/data-learning-center/data-persistence/</a></li>
+    <hr>
+    <li><a href="https://c3.ai/glossary/features/data-persistence/">https://c3.ai/glossary/features/data-persistence/</a></li>
+    <hr>
+  </ol>
+   
+
 <button onclick="window.location.href='index.html'">Volver al inicio</button>
 </body>
