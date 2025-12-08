@@ -1,12 +1,18 @@
-const CACHE_NAME = "app-cache-v4";
+// ==============================
+//      SERVICE WORKER PWA
+// ==============================
 
-// Archivos a cachear (TODOS en rutas relativas por GitHub Pages)
+const CACHE_NAME = "app-cache-v5";
+
+// Archivos esenciales para modo offline.
+// Rutas EXACTAS respetando MAYÚSCULAS y la estructura del repo.
 const ARCHIVOS_A_CACHEAR = [
   "./index.html",
   "./style2.css",
   "./script.js",
+  "./manifest.json",
 
-  // Nuevas páginas añadidas en tu index
+  // Páginas principales
   "./sistemas.html",
   "./Aplicaciones.html",
   "./Hardware.html",
@@ -17,8 +23,6 @@ const ARCHIVOS_A_CACHEAR = [
   "./Arquitecturas.html",
   "./Herramientas.html",
   "./Persistencia.html",
-
-  // Páginas que ya existían antes
   "./sensores.html",
   "./servicios.html",
   "./librerias.html",
@@ -26,16 +30,14 @@ const ARCHIVOS_A_CACHEAR = [
   "./empaquetado.html",
   "./plataformas.html",
 
-  // Imágenes u otros recursos
+  // Íconos
   "./biomebaro.png",
-  "./webb.png",
-
-  // Manifest (opcional pero recomendable cachearlo)
-  "./manifest.json",
+  "./webb.png"
 ];
 
-
-// INSTALACIÓN DEL SERVICE WORKER
+// ==============================
+//      INSTALACIÓN DEL SW
+// ==============================
 self.addEventListener("install", event => {
   console.log("Service Worker instalado");
 
@@ -44,30 +46,62 @@ self.addEventListener("install", event => {
       return cache.addAll(ARCHIVOS_A_CACHEAR);
     })
   );
+
+  self.skipWaiting();
 });
 
-// ACTIVACIÓN Y LIMPIEZA DE CACHÉS ANTIGUOS
+// ==============================
+//   ACTIVACIÓN Y LIMPIEZA DE CACHE
+// ==============================
 self.addEventListener("activate", event => {
   event.waitUntil(
-    caches.keys().then(keys => {
-      return Promise.all(
+    caches.keys().then(keys =>
+      Promise.all(
         keys.map(key => {
           if (key !== CACHE_NAME) {
             console.log("Eliminando caché antiguo:", key);
             return caches.delete(key);
           }
         })
-      );
-    })
+      )
+    )
   );
+
+  self.clients.claim();
 });
 
-// INTERCEPTAR PETICIONES Y USAR CACHÉ SI EXISTE
+// ==============================
+//      FETCH: CACHE DINÁMICO
+// ==============================
 self.addEventListener("fetch", event => {
   event.respondWith(
-    caches.match(event.request).then(cacheResponse => {
-      // Si existe en caché lo devuelve, si no, va a la red
-      return cacheResponse || fetch(event.request);
+    caches.match(event.request).then(cachedResponse => {
+      // Si existe en cache → lo devuelve
+      if (cachedResponse) return cachedResponse;
+
+      // Si no existe → lo obtiene y lo guarda (para imágenes y nuevos recursos)
+      return fetch(event.request)
+        .then(networkResponse => {
+          // No guardar recursos inseguros o errores
+          if (!networkResponse || networkResponse.status !== 200) {
+            return networkResponse;
+          }
+
+          // Guardar en caché dinámico
+          const responseClone = networkResponse.clone();
+
+          caches.open(CACHE_NAME).then(cache => {
+            cache.put(event.request, responseClone);
+          });
+
+          return networkResponse;
+        })
+        .catch(() => {
+          // Fallback para HTML si estás offline y no existe en caché
+          if (event.request.headers.get("accept").includes("text/html")) {
+            return caches.match("./index.html");
+          }
+        });
     })
   );
 });
