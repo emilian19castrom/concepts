@@ -49,7 +49,7 @@ ul li:hover {
     box-shadow: 0 4px 10px rgba(0,0,0,0.20);
 }
 
-/* === Estilo de los enlaces === */
+/* === Enlaces === */
 ul li a {
     text-decoration: none;
     color: #2c3e50;
@@ -58,12 +58,11 @@ ul li a {
     display: block;
 }
 
-/* Hover sobre el texto */
 ul li a:hover {
     color: #1abc9c;
 }
 
-/* === Inputs y botones del login === */
+/* === Login === */
 #authSection {
     text-align: center;
     padding: 20px;
@@ -93,4 +92,70 @@ ul li a:hover {
 
 #authSection button:hover {
     background: #1abc9c;
+}
+
+/* ================================================
+   📱 RESPONSIVIDAD PARA TELÉFONOS MÓVILES
+   ================================================ */
+@media (max-width: 600px) {
+
+    header {
+        padding: 12px;
+        font-size: 18px;
+    }
+
+    #mainContent {
+        padding: 15px;
+    }
+
+    /* Hacer las tarjetas de una sola columna en móviles */
+    ul {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    ul li {
+        padding: 12px;
+    }
+
+    ul li a {
+        font-size: 15px;
+    }
+
+    /* Ajustar inputs y botones */
+    #authSection {
+        width: 95%;
+        padding: 10px;
+    }
+
+    #authSection input,
+    #authSection button {
+        width: 100%;
+        font-size: 15px;
+    }
+}
+
+/* ================================================
+   📱 AÚN MÁS AJUSTADO PARA PANTALLAS MUY PEQUEÑAS
+   ================================================ */
+@media (max-width: 380px) {
+
+    header {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    ul li {
+        padding: 10px;
+    }
+
+    ul li a {
+        font-size: 14px;
+    }
+
+    #authSection input,
+    #authSection button {
+        font-size: 14px;
+        padding: 8px;
+    }
 }
