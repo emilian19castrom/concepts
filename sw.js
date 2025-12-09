@@ -32,8 +32,7 @@ const ARCHIVOS_A_CACHEAR = [
 
   // Íconos
   "./biomebaro.png",
-  "./webb.png",
-  "./shared.jpg",
+  "./webb.png"
 ];
 
 // ==============================
